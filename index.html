@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAK GLOBAL TRADE | Premium Global Exporters</title>
-    <!-- Importing Modern Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Importing Modern Corporate Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #0a192f;
@@ -38,53 +38,71 @@
             align-items: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        .logo { color: var(--white); font-weight: 700; font-size: 1.5rem; letter-spacing: 1px; }
+        .logo { 
+            font-family: 'Montserrat', sans-serif; 
+            color: var(--white); 
+            font-weight: 900; 
+            font-size: 1.8rem; 
+            letter-spacing: 2px; 
+        }
         .logo span { color: var(--green); }
 
-        /* Hero Section */
+        /* Advanced Hero Section */
         .hero {
-            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(10, 25, 47, 0.85), rgba(10, 25, 47, 0.85)), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            height: 70vh;
+            background-attachment: fixed; /* Parallax effect */
+            height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: var(--white);
             text-align: center;
             padding: 0 20px;
         }
-        .hero h2 { font-size: 3.5rem; margin: 0; text-transform: uppercase; }
-        .hero p { font-size: 1.2rem; color: var(--green); max-width: 700px; margin-top: 15px; }
+        
+        /* Stylish Creative Typography for Brand Name */
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin: 0;
+            text-transform: uppercase;
+            /* Advanced Gradient Text Effect */
+            background: linear-gradient(45deg, #2ecc71, #a8ff78, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 10px 15px rgba(0,0,0,0.3));
+        }
+        
+        .hero p { font-size: 1.3rem; color: #e2e8f0; max-width: 800px; margin-top: 20px; font-weight: 300; }
 
         /* Moving Countries Banner */
         .marquee-box {
             background: var(--green);
             color: var(--navy);
-            padding: 10px 0;
-            font-weight: 600;
+            padding: 12px 0;
+            font-weight: 700;
             overflow: hidden;
+            letter-spacing: 1px;
         }
         .marquee-content {
             display: flex;
             white-space: nowrap;
-            animation: scroll 30s linear infinite;
+            animation: scroll 35s linear infinite;
         }
-        @keyframes scroll {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
+        @keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
         .marquee-content span { margin: 0 40px; display: flex; align-items: center; gap: 10px; }
 
         /* Main Content Container */
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 50px 0; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 60px 0; }
         
-        .section-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+        .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
             font-size: 2.5rem;
             color: var(--navy);
             position: relative;
@@ -99,25 +117,62 @@
             position: absolute;
             bottom: -10px;
             left: 25%;
+            border-radius: 2px;
         }
 
         /* Product Cards */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .card {
             background: var(--white);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #eaeaea;
         }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-        .card img { width: 100%; height: 250px; object-fit: cover; }
-        .card-info { padding: 20px; text-align: center; }
-        .card-info h3 { margin: 0; color: var(--navy); font-size: 1.3rem; }
+        .card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(46, 204, 113, 0.15); border-color: var(--green); }
+        .card img { width: 100%; height: 260px; object-fit: cover; }
+        .card-info { padding: 25px; text-align: center; }
+        .card-info h3 { margin: 0; color: var(--navy); font-size: 1.3rem; font-weight: 600; }
+
+        /* Modern Inquiry Form Section */
+        .inquiry-wrapper {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            margin-top: 40px;
+            border-top: 5px solid var(--green);
+        }
+        .inquiry-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .inquiry-form input, .inquiry-form select, .inquiry-form textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            background: #fdfdfd;
+        }
+        .inquiry-form input:focus, .inquiry-form select:focus, .inquiry-form textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 8px rgba(46, 204, 113, 0.2);
+        }
+        .full-width { grid-column: span 2; }
+        .submit-btn {
+            background: var(--navy);
+            color: var(--white);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            grid-column: span 2;
+        }
+        .submit-btn:hover { background: var(--green); transform: translateY(-3px); }
 
         /* Floating WhatsApp Button */
         .whatsapp-float {
@@ -129,10 +184,10 @@
             border-radius: 50px;
             text-align: center;
             font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             z-index: 100;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -140,37 +195,40 @@
         }
         .whatsapp-float:hover { background-color: #128c7e; transform: scale(1.1); }
 
-        /* Info Section */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
+        /* Corporate Info Section */
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; margin-top: 80px; }
         .info-pane {
             background: var(--navy);
             color: var(--white);
             padding: 40px;
             border-radius: 20px;
             border-left: 8px solid var(--green);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .info-pane h3 { color: var(--green); font-size: 1.8rem; margin-top: 0; }
-        .info-pane p { font-size: 1rem; color: #a0aec0; }
-        .legal-tag { background: #1e3a63; padding: 5px 15px; border-radius: 5px; margin-right: 10px; font-size: 0.9rem; }
+        .info-pane h3 { font-family: 'Montserrat', sans-serif; color: var(--green); font-size: 1.8rem; margin-top: 0; }
+        .info-pane p { font-size: 1.05rem; color: #cbd5e1; }
+        .legal-tag { background: #1e3a63; padding: 6px 15px; border-radius: 5px; margin-right: 10px; font-size: 0.95rem; display: inline-block; margin-top: 10px;}
 
-        footer { background: #050d1a; color: #666; text-align: center; padding: 30px; margin-top: 50px; border-top: 1px solid #111; }
+        footer { background: #050d1a; color: #666; text-align: center; padding: 30px; margin-top: 50px; font-size: 0.9rem; }
+
+        /* Mobile Responsiveness for Form */
+        @media (max-width: 768px) {
+            .inquiry-form { grid-template-columns: 1fr; }
+            .full-width, .submit-btn { grid-column: span 1; }
+            .hero h1 { font-size: 2.8rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">MAK <span>GLOBAL TRADE</span></div>
-        <div style="color: white; font-size: 0.9rem;">Malegaon | Nashik | Maharashtra</div>
+        <div style="color: white; font-size: 0.85rem; font-weight: 300; letter-spacing: 1px;">MALEGAON | INDIA</div>
     </nav>
 
     <div class="hero">
-        <h2>Quality Without Borders</h2>
-        <p>Leading the way in premium agricultural exports. Specializing in high-grade Tamarind and Fresh Produce for global markets.</p>
+        <h1>MAK GLOBAL TRADE</h1>
+        <p>Premium Agricultural & Commodity Exporters. Specializing in high-grade Tamarind and Fresh Produce for the international market.</p>
     </div>
 
     <div class="marquee-box">
@@ -202,8 +260,7 @@
                 <div class="card-info"><h3>Tamarind Seed Powder</h3></div>
             </div>
             <div class="card">
-                   <img src="tamarind-seeds.jpg" alt="Tamarind Seeds">
-                
+                <img src="tamarind-seeds.jpg" alt="Tamarind Seeds">
                 <div class="card-info"><h3>Tamarind Seeds</h3></div>
             </div>
         </div>
@@ -211,7 +268,7 @@
         <!-- VEG & FRUITS SECTION -->
         <div class="section-header" style="margin-top: 80px;">
             <h2>Fresh Produce Exports</h2>
-            <p>From the farms of India to your doorstep.</p>
+            <p>From the rich agricultural belts of India direct to your global destination.</p>
         </div>
 
         <div class="grid">
@@ -233,37 +290,65 @@
             </div>
         </div>
 
+        <!-- NEW INQUIRY FORM SECTION -->
+        <div class="section-header" style="margin-top: 100px;">
+            <h2>Trade Inquiry</h2>
+            <p>Request a customized quote or discuss a long-term partnership.</p>
+        </div>
+        
+        <div class="inquiry-wrapper">
+            <!-- Note: To make this form send emails, you can later connect it to a free service like Formspree.io -->
+            <form class="inquiry-form" action="mailto:info@makglobaltrade.com" method="post" enctype="text/plain">
+                <input type="text" name="Name" placeholder="Your Name / Company Name" required>
+                <input type="email" name="Email" placeholder="Email Address" required>
+                <input type="text" name="Country" placeholder="Target Country / Port of Destination" required>
+                <select name="Product_Interest">
+                    <option value="" disabled selected>Select Product of Interest</option>
+                    <option value="Tamarind Variants">Tamarind (Fresh, Dried, Seeds, Powder)</option>
+                    <option value="Fresh Produce">Fresh Vegetables & Fruits</option>
+                    <option value="Mixed/Other">Mixed Shipment / Other Commodities</option>
+                </select>
+                <textarea name="Message" class="full-width" rows="5" placeholder="Specify your volume requirements, packaging needs, or general message..." required></textarea>
+                <button type="submit" class="submit-btn">Send Inquiry via Email</button>
+            </form>
+        </div>
+
         <!-- CORPORATE INFO -->
         <div class="info-grid">
             <div class="info-pane">
                 <h3>Director's Desk</h3>
-                <p style="color: var(--white); font-size: 1.4rem; margin-bottom: 5px;">Altamash Khan</p>
-                <p>Leading MAK GLOBAL TRADE with a commitment to quality, transparency, and timely delivery.</p>
-                <div style="margin-top: 20px;">
-                    <p>📞 <a href="tel:+917030375028" style="color: var(--green); text-decoration: none;">+91 7030375028</a></p>
-                    <p>✉️ <a href="mailto:info@makglobaltrade.com" style="color: var(--green); text-decoration: none;">info@makglobaltrade.com</a></p>
+                <p style="color: var(--white); font-size: 1.5rem; font-weight: 600; margin-bottom: 5px;">Altamash Khan</p>
+                <p>Leading MAK GLOBAL TRADE with a commitment to uncompromised quality, legal transparency, and timely global logistics.</p>
+                <div style="margin-top: 25px; border-top: 1px solid #1e3a63; padding-top: 20px;">
+                    <p>📞 <a href="tel:+917030375028" style="color: var(--white); text-decoration: none; font-weight: bold;">+91 7030375028</a></p>
+                    <p>✉️ <a href="mailto:info@makglobaltrade.com" style="color: var(--green); text-decoration: none; font-weight: bold;">info@makglobaltrade.com</a></p>
                 </div>
             </div>
             <div class="info-pane">
-                <h3>Corporate Office</h3>
-                <p>207/2 PLOT NO. 12, DAYANE ABDUL RAHMAN PARK, NEAR PARADISE HIGH SCHOOL, AQSA COLONY, MALEGAON NASHIK 423203</p>
+                <h3>Corporate Headquarters</h3>
+                <p style="line-height: 1.8;">
+                    <strong>MAK GLOBAL TRADE</strong><br>
+                    207/2 Plot No. 12, Dayane Abdul Rahman Park<br>
+                    Near Paradise High School, Aqsa Colony<br>
+                    Malegaon, Nashik - 423203<br>
+                    Maharashtra, India
+                </p>
                 <div style="margin-top: 25px;">
-                    <span class="legal-tag">PAN: DWHPM4466C</span>
-                    <span class="legal-tag">REG: 401592394580</span>
+                    <span class="legal-tag">PAN: DWHPM4466C</span><br>
+                    <span class="legal-tag" style="background: var(--green); color: var(--navy); font-weight: bold; margin-top: 15px;">✓ MSME | ✓ IEC | ✓ GST COMPLIANT</span>
                 </div>
-                <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">✓ IEC REGISTERED | ✓ GST COMPLIANT | ✓ MSME CERTIFIED</p>
             </div>
         </div>
 
     </div>
 
     <!-- Floating WhatsApp -->
-    <a href="https://wa.me/917030375028" class="whatsapp-float" target="_blank">
-        <svg style="width:35px;height:35px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.5 2 2 6.5 2 12.04C2 13.81 2.46 15.5 3.33 17L2.03 21.8L7 20.5C8.41 21.31 10.15 21.75 12.04 21.75C17.57 21.75 22.07 17.25 22.07 11.71C22.07 9.04 21.03 6.54 19.14 4.65C17.25 2.76 14.71 1.71 12.04 2M12.05 3.66C14.18 3.66 16.26 4.5 17.77 6C19.28 7.5 20.12 9.58 20.12 11.72C20.12 16.17 16.5 19.79 12.05 19.79C10.53 19.79 9.1 19.38 7.85 18.65L7.56 18.47L4.22 19.35L5.12 16L4.93 15.69C4.13 14.41 3.71 12.91 3.71 11.38C3.71 6.93 7.33 3.31 11.78 3.31C11.87 3.31 11.96 3.31 12.05 3.66M8.31 8.06C8.08 8.06 7.71 8.15 7.4 8.46C7.08 8.77 6.2 9.64 6.2 11.39C6.2 13.14 7.47 14.82 7.65 15.06C7.83 15.3 10.15 18.88 13.72 20.43C14.57 20.8 15.23 21.03 15.74 21.19C16.6 21.46 17.38 21.43 18 21.34C18.68 21.24 20.11 20.47 20.41 19.6C20.71 18.73 20.71 18 20.62 17.84C20.53 17.68 20.28 17.59 19.9 17.4C19.53 17.21 17.68 16.3 17.33 16.17C17 16.05 16.74 16 16.5 16.36C16.26 16.72 15.58 17.51 15.37 17.75C15.15 18 14.93 18.04 14.56 17.85C14.18 17.66 12.97 17.26 11.54 15.99C10.41 14.99 9.66 13.75 9.44 13.38C9.22 13 9.42 12.8 9.61 12.61C9.78 12.44 10 12.18 10.18 11.97C10.37 11.76 10.43 11.6 10.56 11.33C10.69 11.06 10.62 10.84 10.53 10.65C10.43 10.46 9.65 8.56 9.33 7.78C9 7 8.68 7.11 8.44 7.11C8.22 7.11 8.08 7.11 8.31 8.06Z"/></svg>
+    <a href="https://wa.me/917030375028" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <svg style="width:38px;height:38px" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.5 2 2 6.5 2 12.04C2 13.81 2.46 15.5 3.33 17L2.03 21.8L7 20.5C8.41 21.31 10.15 21.75 12.04 21.75C17.57 21.75 22.07 17.25 22.07 11.71C22.07 9.04 21.03 6.54 19.14 4.65C17.25 2.76 14.71 1.71 12.04 2M12.05 3.66C14.18 3.66 16.26 4.5 17.77 6C19.28 7.5 20.12 9.58 20.12 11.72C20.12 16.17 16.5 19.79 12.05 19.79C10.53 19.79 9.1 19.38 7.85 18.65L7.56 18.47L4.22 19.35L5.12 16L4.93 15.69C4.13 14.41 3.71 12.91 3.71 11.38C3.71 6.93 7.33 3.31 11.78 3.31C11.87 3.31 11.96 3.31 12.05 3.66M8.31 8.06C8.08 8.06 7.71 8.15 7.4 8.46C7.08 8.77 6.2 9.64 6.2 11.39C6.2 13.14 7.47 14.82 7.65 15.06C7.83 15.3 10.15 18.88 13.72 20.43C14.57 20.8 15.23 21.03 15.74 21.19C16.6 21.46 17.38 21.43 18 21.34C18.68 21.24 20.11 20.47 20.41 19.6C20.71 18.73 20.71 18 20.62 17.84C20.53 17.68 20.28 17.59 19.9 17.4C19.53 17.21 17.68 16.3 17.33 16.17C17 16.05 16.74 16 16.5 16.36C16.26 16.72 15.58 17.51 15.37 17.75C15.15 18 14.93 18.04 14.56 17.85C14.18 17.66 12.97 17.26 11.54 15.99C10.41 14.99 9.66 13.75 9.44 13.38C9.22 13 9.42 12.8 9.61 12.61C9.78 12.44 10 12.18 10.18 11.97C10.37 11.76 10.43 11.6 10.56 11.33C10.69 11.06 10.62 10.84 10.53 10.65C10.43 10.46 9.65 8.56 9.33 7.78C9 7 8.68 7.11 8.44 7.11C8.22 7.11 8.08 7.11 8.31 8.06Z"/></svg>
     </a>
 
     <footer>
-        <p>&copy; 2026 MAK Global Trade. High Quality Export Solutions. Built for the Future.</p>
+        <p>&copy; 2026 MAK Global Trade. Exporters of Premium Commodities. All Rights Reserved.</p>
     </footer>
 
 </body>
