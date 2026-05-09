@@ -89,7 +89,7 @@
             padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; border-bottom: 1px solid var(--gold-border);
         }
-        .logo { font-size: 1.8rem; letter-spacing: 1px; }
+        .logo { display: flex; align-items: center; gap: 15px; font-size: 2rem; letter-spacing: 1px; text-transform: uppercase; }
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links > div, .nav-links > a { color: var(--text-white); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.95rem; cursor: pointer; position: relative; }
         .nav-links > div:hover, .nav-links > a:hover { color: var(--gold-main); }
@@ -127,7 +127,7 @@
         @keyframes crossFade { 0% { opacity: 0; transform: scale(1.05); } 10% { opacity: 1; transform: scale(1); } 25% { opacity: 1; transform: scale(1); } 35% { opacity: 0; transform: scale(1.05); } 100% { opacity: 0; } }
 
         .hero-content { max-width: 800px; position: relative; z-index: 1; }
-        .hero-content h1 { font-size: 5rem; margin-bottom: 15px; line-height: 1.1; }
+        .hero-content h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; }
         .hero-content p { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 35px; font-weight: 300; border-left: 3px solid var(--gold-main); padding-left: 15px;}
 
         /* --- SECTIONS (General) --- */
@@ -156,9 +156,10 @@
         .service-body h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-white); }
 
         /* --- DIRECTORS SECTION --- */
-        .director-card { background: var(--card-bg); padding: 30px; border-radius: 8px; text-align: center; border: 1px solid var(--glossy-border); }
-        .director-img-wrapper { width: 120px; height: 120px; border-radius: 50%; background: #000; margin: 0 auto 20px; border: 3px solid var(--gold-main); display: flex; align-items: center; justify-content: center; overflow: hidden;}
-        .director-title { color: var(--emerald-light); font-size: 1rem; margin-bottom: 15px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
+        .director-card { background: var(--card-bg); padding: 40px; border-radius: 8px; text-align: center; border: 1px solid var(--glossy-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .director-img-wrapper { width: 140px; height: 140px; border-radius: 50%; background: #000; margin: 0 auto 20px; border: 3px solid var(--gold-main); display: flex; align-items: center; justify-content: center; overflow: hidden;}
+        .director-title { color: var(--emerald-light); font-size: 1rem; margin-bottom: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
+        .director-qual { color: var(--gold-light); font-size: 0.9rem; font-weight: 500; margin-bottom: 20px;}
 
         /* --- LOGISTICS & TRADE DATA --- */
         .logistics-bg { background: var(--slate-bg); border-top: 1px solid var(--gold-border); }
@@ -242,6 +243,8 @@
 
         @media (max-width: 1000px) {
             .menu-toggle { display: block; }
+            .logo img { height: 35px !important; }
+            .logo { font-size: 1.5rem; }
             .nav-links {
                 display: none; position: absolute; top: 100%; left: 0; width: 100%;
                 background: rgba(9, 18, 33, 0.98); flex-direction: column; padding: 20px 0;
@@ -253,7 +256,6 @@
             .hero-content h1 { font-size: 3.5rem; }
             .catalog-container { flex-direction: column; }
             .catalog-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--gold-border); }
-            .spec-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -270,13 +272,14 @@
         <div id="google_translate_element"></div>
     </div>
 
-    <!-- 2. NAVIGATION -->
+    <!-- 2. NAVIGATION (WITH LOGO & BIG LETTERS) -->
     <nav>
-        <div class="logo glossy-heading">MAK <span class="glossy-gold">GLOBAL</span></div>
+        <div class="logo glossy-heading">
+            <img src="logo.jpg" alt="MAK Logo" style="height: 50px; border-radius: 8px;">
+            <span>MAK <span class="glossy-gold">GLOBAL TRADE</span></span>
+        </div>
         <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
         <div class="nav-links" id="navLinks">
-            <a href="#about" onclick="toggleMenu()">Company</a>
-            
             <div class="dropdown">
                 <span>Our Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></span>
                 <div class="dropdown-content">
@@ -290,7 +293,7 @@
                 </div>
             </div>
 
-            <a href="#directors" onclick="toggleMenu()">Board of Directors</a>
+            <a href="#directors" onclick="toggleMenu()">About Us</a>
             <a href="#logistics" onclick="toggleMenu()">Logistics</a>
             <a href="#certificates" onclick="toggleMenu()">Certifications</a>
             <a href="#inquiry" class="btn-gold" style="margin-left: 10px;" onclick="toggleMenu()">Request Quotation</a>
@@ -307,35 +310,11 @@
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <h1 class="glossy-heading">GLOBAL TRADE<br><span class="glossy-gold">EXCELLENCE</span></h1>
-            <p>Your Trusted Partner in Worldwide Export. Delivering premium agricultural commodities, spices, and fresh produce through a secure and reliable international logistics network.</p>
-            <a href="#tamarind" class="btn-gold" style="font-size: 1.1rem; padding: 15px 35px;">Explore Premium Cargo</a>
-        </div>
-    </section>
-
-    <!-- NEW SECTION: DIRECTORS -->
-    <section id="directors" class="section">
-        <h2 class="section-title glossy-heading">Board of <span class="glossy-gold">Directors</span></h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-            
-            <div class="director-card fade-hover">
-                <div class="director-img-wrapper">
-                    <i class="fa-solid fa-user-tie" style="font-size: 4rem; color: var(--gold-light);"></i>
-                </div>
-                <h3 style="color: var(--gold-light); margin-bottom: 5px; font-size: 1.4rem;">Mr. Director 1</h3>
-                <p class="director-title">Managing Director</p>
-                <p style="color: var(--text-white); font-size: 0.9rem;">Leading the global export strategy and international relations with extensive experience in the B2B trade and supply chain sector. Ensuring MAK Global meets world-class compliance.</p>
-            </div>
-            
-            <div class="director-card fade-hover">
-                <div class="director-img-wrapper">
-                    <i class="fa-solid fa-user-tie" style="font-size: 4rem; color: var(--gold-light);"></i>
-                </div>
-                <h3 style="color: var(--gold-light); margin-bottom: 5px; font-size: 1.4rem;">Mr. Director 2</h3>
-                <p class="director-title">Operations Director</p>
-                <p style="color: var(--text-white); font-size: 0.9rem;">Overseeing domestic procurement, logistics, and quality control. Dedicated to ensuring every container leaving our facilities perfectly matches the buyer's strict international standards.</p>
-            </div>
-
+            <h1 class="glossy-heading">MAK <span class="glossy-gold">GLOBAL TRADE</span></h1>
+            <!-- SIMPLIFIED TEXT HERE -->
+            <p>Your reliable partner for global export. We deliver top-quality farm products, fresh fruits, vegetables, and spices to the world safely and on time.</p>
+            <!-- BUTTON CHANGED TO 'ABOUT US' -->
+            <a href="#directors" class="btn-gold" style="font-size: 1.1rem; padding: 15px 35px;">About Us</a>
         </div>
     </section>
 
@@ -470,6 +449,20 @@
         </div>
     </section>
 
+    <!-- INTERNATIONAL CURRENCIES WITH FLAGS -->
+    <section class="currency-section">
+        <h3 style="color: var(--gold-main); margin-bottom: 10px;">International Trade Currencies</h3>
+        <p style="color: var(--text-white);">We facilitate global transactions using major international currencies for seamless B2B import operations.</p>
+        <div class="currency-grid">
+            <div class="currency-item">🇺🇸 USD</div>
+            <div class="currency-item">🇬🇧 GBP</div>
+            <div class="currency-item">🇮🇳 INR</div>
+            <div class="currency-item">🇦🇪 AED</div>
+            <div class="currency-item">🇰🇼 KWD</div>
+            <div class="currency-item">🇸🇦 SAR</div>
+        </div>
+    </section>
+
     <!-- 7. CERTIFICATIONS & INQUIRY -->
     <section id="certificates" class="section cert-bg">
         <h2 class="section-title glossy-heading">Business Certifications</h2>
@@ -526,7 +519,27 @@
         </div>
     </section>
 
-    <!-- 9. CONTACT BRANCHES -->
+    <!-- 9. DIRECTORS SECTION (Moved Above Branches) -->
+    <section id="directors" class="section">
+        <h2 class="section-title glossy-heading">About <span class="glossy-gold">Us</span></h2>
+        <div style="display: flex; justify-content: center; max-width: 1000px; margin: 0 auto;">
+            
+            <!-- SINGLE DIRECTOR PROFILE -->
+            <div class="director-card fade-hover" style="max-width: 500px; width: 100%;">
+                <div class="director-img-wrapper">
+                    <i class="fa-solid fa-user-tie" style="font-size: 4rem; color: var(--gold-light);"></i>
+                </div>
+                <h3 style="color: var(--gold-light); margin-bottom: 5px; font-size: 1.8rem; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Altamash Khan</h3>
+                <p class="director-title">Managing Director</p>
+                <p class="director-qual">M.E Chemical Engineering</p>
+                <hr style="border: 0; height: 1px; background: rgba(212, 175, 55, 0.3); margin: 20px 0;">
+                <p style="color: var(--text-white); font-size: 0.95rem;">Leading the global export strategy and international relations with extensive experience in engineering, B2B trade, and supply chain management. Dedicated to ensuring that MAK Global Trade consistently meets world-class compliance and delivers uncompromising quality to every destination.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- 10. CONTACT BRANCHES -->
     <section id="contact" class="section cert-bg">
         <h2 class="section-title glossy-heading">Global Branches & Contact</h2>
         <div class="branch-grid">
@@ -554,9 +567,12 @@
         </div>
     </section>
 
-    <!-- 10. FOOTER -->
+    <!-- 11. FOOTER -->
     <footer>
-        <h2 class="glossy-heading" style="font-size: 1.8rem; margin-bottom: 15px;">MAK GLOBAL TRADE</h2>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
+            <img src="logo.jpg" alt="MAK Logo" style="height: 40px; border-radius: 5px;">
+            <h2 class="glossy-heading" style="font-size: 1.8rem; margin: 0;">MAK GLOBAL TRADE</h2>
+        </div>
         <div class="social-icons">
             <a href="https://wa.me/917030305028"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
@@ -565,7 +581,7 @@
         <p style="color: var(--text-white);">&copy; 2026 MAK Global Trade. All Rights Reserved. Exporting Excellence.</p>
     </footer>
 
-    <!-- --- INTERACTIVE CATALOG MODAL (NEW DESIGN) --- -->
+    <!-- --- INTERACTIVE CATALOG MODAL (Detailed Layout) --- -->
     <div id="catalogModal" class="catalog-modal">
         <!-- Breadcrumb Header -->
         <div class="breadcrumb-nav">
@@ -580,7 +596,7 @@
                 <div id="catSubProducts"></div>
             </div>
 
-            <!-- Content Area (Redesigned) -->
+            <!-- Content Area (Detailed Text Focus) -->
             <div class="catalog-content">
                 <h1 id="catProdTitle" class="cat-title glossy-heading">Select a Product</h1>
                 <div class="cat-hs" id="catHsCode">HS Code: 000000</div>
