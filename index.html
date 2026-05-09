@@ -17,13 +17,13 @@
             --card-bg: #1F2937;
             --emerald: #10B981;
             --emerald-dark: #047857;
-            --emerald-light: #86efac; /* Light Green for Subheadings */
+            --emerald-light: #86efac; 
             --gold-light: #FDE047;
             --gold-main: #D4AF37;
             --gold-dark: #927519;
             --tamarind-bg: #21130A;
             --tamarind-card: #301B0E;
-            --text-white: #ffffff; /* Pure white for small fonts */
+            --text-white: #ffffff; 
             --text-grey: #9CA3AF;
             --glossy-border: rgba(255, 255, 255, 0.1);
             --gold-border: rgba(212, 175, 55, 0.3);
@@ -155,11 +155,61 @@
         .service-body { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;}
         .service-body h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-white); }
 
-        /* --- DIRECTORS SECTION --- */
-        .director-card { background: var(--card-bg); padding: 40px; border-radius: 8px; text-align: center; border: 1px solid var(--glossy-border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .director-img-wrapper { width: 140px; height: 140px; border-radius: 50%; background: #000; margin: 0 auto 20px; border: 3px solid var(--gold-main); display: flex; align-items: center; justify-content: center; overflow: hidden;}
-        .director-title { color: var(--emerald-light); font-size: 1rem; margin-bottom: 5px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;}
-        .director-qual { color: var(--gold-light); font-size: 0.9rem; font-weight: 500; margin-bottom: 20px;}
+        /* --- DIRECTORS SECTION ENHANCED --- */
+        .director-card { 
+            background: linear-gradient(145deg, #1F2937 0%, #111827 100%);
+            padding: 50px 40px; 
+            border-radius: 15px; 
+            text-align: center; 
+            border: 1px solid var(--gold-border); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6); 
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .director-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 5px;
+            background: linear-gradient(90deg, var(--gold-dark), var(--gold-main), #fff2a8);
+        }
+        .director-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15);
+            border-color: var(--gold-main);
+        }
+        .director-img-wrapper { 
+            width: 140px; height: 140px; 
+            border-radius: 50%; 
+            background: var(--dark-ocean); 
+            margin: 0 auto 25px; 
+            border: 3px solid var(--gold-main); 
+            display: flex; align-items: center; justify-content: center; 
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+        .director-name {
+            color: var(--gold-light);
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 2px;
+        }
+        .director-title { 
+            color: var(--emerald-light); 
+            font-size: 1.1rem; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            text-transform: uppercase; 
+            letter-spacing: 3px;
+        }
+        .director-qual { 
+            color: var(--text-grey); 
+            font-size: 1rem; 
+            font-weight: 500; 
+            margin-bottom: 25px;
+            font-style: italic;
+        }
 
         /* --- LOGISTICS & TRADE DATA --- */
         .logistics-bg { background: var(--slate-bg); border-top: 1px solid var(--gold-border); }
@@ -196,7 +246,7 @@
         .social-icons a { color: var(--gold-main); transition: 0.3s; }
         .social-icons a:hover { color: var(--gold-light); transform: scale(1.1); }
 
-        /* --- INTERACTIVE CATALOG MODAL (REDESIGNED LAYOUT) --- */
+        /* --- INTERACTIVE CATALOG MODAL (Detailed Layout) --- */
         .catalog-modal {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--dark-ocean); z-index: 2000; overflow-y: auto;
@@ -231,7 +281,6 @@
         .cat-title { font-size: 3rem; margin-bottom: 5px; color: var(--text-white); }
         .cat-hs { display: inline-block; background: var(--gold-dark); color: #000; padding: 5px 15px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; margin-bottom: 20px;}
         
-        /* NEW Detailed Text Layout */
         .product-detail-wrapper { display: flex; flex-direction: column; gap: 30px; margin-bottom: 40px; }
         .detail-main-img { width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; border: 1px solid var(--gold-border); }
         
@@ -311,16 +360,14 @@
         </div>
         <div class="hero-content">
             <h1 class="glossy-heading">MAK <span class="glossy-gold">GLOBAL TRADE</span></h1>
-            <!-- SIMPLIFIED TEXT HERE -->
             <p>Your reliable partner for global export. We deliver top-quality farm products, fresh fruits, vegetables, and spices to the world safely and on time.</p>
-            <!-- BUTTON CHANGED TO 'ABOUT US' -->
             <a href="#directors" class="btn-gold" style="font-size: 1.1rem; padding: 15px 35px;">About Us</a>
         </div>
     </section>
 
     <!-- 4. DEDICATED TAMARIND SECTION -->
     <section id="tamarind" class="section tamarind-premium-section">
-        <h2 class="section-title glossy-heading" style="color: #fff;">Signature Export: <span class="glossy-gold">Tamarind</span></h2>
+        <h2 class="section-title glossy-heading" style="color: #fff;">Premium Export: <span class="glossy-gold">Tamarind</span></h2>
         <p class="text-center" style="max-width: 800px; margin: -40px auto 50px; color: var(--text-grey); font-size: 1.1rem; text-align: center;">Sourced from the rich soils of Maharashtra. We control the domestic supply chain to ensure volume, pricing, and uncompromising export quality.</p>
         
         <div class="tam-grid">
@@ -345,7 +392,8 @@
             </div>
 
             <div class="tam-card fade-hover" onclick="openCatalog('Tamarind', 'Tamarind Powder')">
-                <img src="tamarind-Powder.jpg" alt="Tamarind Powder">
+                <!-- UPDATED FILE NAME HERE -->
+                <img src="tamarindpowder.jpg" alt="Tamarind Powder">
                 <div class="tam-body">
                     <div class="hs-badge">HS Code: 110630</div>
                     <h3>Tamarind Powder</h3>
@@ -388,7 +436,8 @@
                 </div>
             </div>
             <div class="service-card fade-hover" onclick="openCatalog('Spices')">
-                <img src="chilipowder.jpg .webp" alt="Spices">
+                <!-- UPDATED FILE NAME HERE -->
+                <img src="spices.jpg" alt="Spices">
                 <div class="service-body">
                     <h3>Indian Spices</h3>
                     <p style="color: var(--text-white);">High-purity Chilli Powder, Turmeric, Cumin, Cardamom, and Pepper.</p>
@@ -519,27 +568,30 @@
         </div>
     </section>
 
-    <!-- 9. DIRECTORS SECTION (Moved Above Branches) -->
+    <!-- 9. DIRECTORS SECTION (REDESIGNED) -->
     <section id="directors" class="section">
         <h2 class="section-title glossy-heading">About <span class="glossy-gold">Us</span></h2>
         <div style="display: flex; justify-content: center; max-width: 1000px; margin: 0 auto;">
             
-            <!-- SINGLE DIRECTOR PROFILE -->
-            <div class="director-card fade-hover" style="max-width: 500px; width: 100%;">
+            <div class="director-card">
                 <div class="director-img-wrapper">
-                    <i class="fa-solid fa-user-tie" style="font-size: 4rem; color: var(--gold-light);"></i>
+                    <i class="fa-solid fa-user-tie" style="font-size: 4.5rem; color: var(--gold-light);"></i>
                 </div>
-                <h3 style="color: var(--gold-light); margin-bottom: 5px; font-size: 1.8rem; text-transform: uppercase; font-family: 'Montserrat', sans-serif;">Altamash Khan</h3>
+                <h3 class="director-name">Altamash Khan</h3>
                 <p class="director-title">Managing Director</p>
                 <p class="director-qual">M.E Chemical Engineering</p>
-                <hr style="border: 0; height: 1px; background: rgba(212, 175, 55, 0.3); margin: 20px 0;">
-                <p style="color: var(--text-white); font-size: 0.95rem;">Leading the global export strategy and international relations with extensive experience in engineering, B2B trade, and supply chain management. Dedicated to ensuring that MAK Global Trade consistently meets world-class compliance and delivers uncompromising quality to every destination.</p>
+                
+                <hr style="border: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent); margin: 25px 0;">
+                
+                <p style="color: var(--text-white); font-size: 1rem; line-height: 1.8; padding: 0 15px;">
+                    Leading the global export strategy and international relations with extensive experience in engineering, B2B trade, and supply chain management. Dedicated to ensuring that MAK Global Trade consistently meets world-class compliance and delivers uncompromising quality to every destination.
+                </p>
             </div>
             
         </div>
     </section>
 
-    <!-- 10. CONTACT BRANCHES -->
+    <!-- 10. CONTACT BRANCHES WITH FLAGS -->
     <section id="contact" class="section cert-bg">
         <h2 class="section-title glossy-heading">Global Branches & Contact</h2>
         <div class="branch-grid">
@@ -581,7 +633,7 @@
         <p style="color: var(--text-white);">&copy; 2026 MAK Global Trade. All Rights Reserved. Exporting Excellence.</p>
     </footer>
 
-    <!-- --- INTERACTIVE CATALOG MODAL (Detailed Layout) --- -->
+    <!-- --- INTERACTIVE CATALOG MODAL --- -->
     <div id="catalogModal" class="catalog-modal">
         <!-- Breadcrumb Header -->
         <div class="breadcrumb-nav">
@@ -667,7 +719,7 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        // EXPANDED DATABASE: Now includes detailed history, benefits, and quality descriptions for EVERY product.
+        // EXPANDED DATABASE WITH CORRECTED FILE PATHS
         const catalogData = {
             'Tamarind': [
                 { 
@@ -685,7 +737,7 @@
                   quality: 'Our dried tamarind is strictly moisture-controlled to remain under 12%, completely preventing mold or fermentation. It is hygienically deseeded, pressed into dense blocks, and vacuum-sealed in export-grade packaging. Compliant with strict APEDA and international food safety standards.' 
                 },
                 { 
-                  name: 'Tamarind Powder', hs: '110630', imgMain: 'tamarind-Powder.jpg',
+                  name: 'Tamarind Powder', hs: '110630', imgMain: 'tamarindpowder.jpg', // UPDATED FILE PATH HERE
                   desc: 'Fine, high-mesh industrial and culinary grade powder for instant flavoring and extractions.', 
                   history: 'Tamarind powder is a modern innovation in the spice trade, developed to meet the fast-paced needs of the modern global food industry. It transformed the traditional, labor-intensive process of soaking and extracting tamarind paste into a convenient, instantly soluble format.',
                   benefits: 'Provides instant, consistent flavor without the need for soaking or straining. It is an essential dry ingredient for instant spice mixes, ready-to-eat meals, sauces, and marinades. It is also highly sought after in the pharmaceutical and cosmetic industries for its natural acidic extracts.',
@@ -768,7 +820,7 @@
             ],
             'Spices': [
                 { 
-                  name: 'Red Chilli Powder', hs: '090422', imgMain: 'chilipowder.jpg .webp',
+                  name: 'Red Chilli Powder', hs: '090422', imgMain: 'spices.jpg', // UPDATED FILE PATH HERE
                   desc: 'Vibrant red color with high SHU heat ratings, milled from premium dried pods.', 
                   history: 'Spices are the foundation of India’s global trade history. Indian chilli powder is the global gold standard, historically driving the spice route economies. It remains an irreplaceable ingredient in Mexican, Asian, and Middle Eastern commercial food manufacturing.',
                   benefits: 'Delivers a standardized, potent heat and brilliant red color to bulk culinary applications. Rich in capsaicin, it acts as a natural preservative and metabolism booster.',
