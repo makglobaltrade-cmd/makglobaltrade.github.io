@@ -86,10 +86,14 @@
         /* --- NAVIGATION --- */
         nav {
             position: sticky; top: 0; background: rgba(9, 18, 33, 0.95); backdrop-filter: blur(12px);
-            padding: 15px 5%; display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 5%; display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; border-bottom: 1px solid var(--gold-border);
         }
-        .logo { display: flex; align-items: center; gap: 15px; font-size: 2rem; letter-spacing: 1px; text-transform: uppercase; }
+        
+        /* INCREASED LOGO SIZE */
+        .logo { display: flex; align-items: center; gap: 15px; font-size: 2.2rem; letter-spacing: 1px; text-transform: uppercase; }
+        .logo img { height: 90px; border-radius: 8px; border: 2px solid var(--gold-main); box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links > div, .nav-links > a { color: var(--text-white); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.95rem; cursor: pointer; position: relative; }
         .nav-links > div:hover, .nav-links > a:hover { color: var(--gold-main); }
@@ -116,7 +120,7 @@
         .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5); color: #000; }
 
         /* --- HERO BANNER & SLIDESHOW --- */
-        .hero { height: 90vh; position: relative; display: flex; align-items: center; justify-content: flex-start; padding: 0 10%; overflow: hidden; }
+        .hero { height: 95vh; position: relative; display: flex; align-items: center; justify-content: flex-start; padding: 0 10%; overflow: hidden; }
         .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: #000; }
         .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: crossFade 20s infinite; }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background: linear-gradient(90deg, rgba(9, 18, 33, 0.95) 0%, rgba(9, 18, 33, 0.7) 50%, rgba(9, 18, 33, 0.3) 100%); border-bottom: 2px solid var(--gold-main); }
@@ -126,13 +130,13 @@
         .hero-slide:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=80'); animation-delay: 15s; }
         @keyframes crossFade { 0% { opacity: 0; transform: scale(1.05); } 10% { opacity: 1; transform: scale(1); } 25% { opacity: 1; transform: scale(1); } 35% { opacity: 0; transform: scale(1.05); } 100% { opacity: 0; } }
 
-        .hero-content { max-width: 800px; position: relative; z-index: 1; }
-        .hero-content h1 { font-size: 4.5rem; margin-bottom: 15px; line-height: 1.1; }
-        .hero-content p { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 35px; font-weight: 300; border-left: 3px solid var(--gold-main); padding-left: 15px;}
+        .hero-content { max-width: 900px; position: relative; z-index: 1; }
+        .hero-content h1 { font-size: 4rem; margin-bottom: 20px; line-height: 1.2; }
+        .hero-content p { font-size: 1.15rem; color: #e2e8f0; margin-bottom: 35px; font-weight: 300; border-left: 3px solid var(--gold-main); padding-left: 15px; line-height: 1.8;}
 
         /* --- SECTIONS (General) --- */
         .section { padding: 90px 5%; }
-        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 60px; }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 60px; text-transform: uppercase; }
 
         /* --- SPECIAL PREMIUM TAMARIND SECTION --- */
         .tamarind-premium-section {
@@ -292,8 +296,9 @@
 
         @media (max-width: 1000px) {
             .menu-toggle { display: block; }
-            .logo img { height: 35px !important; }
+            .logo img { height: 60px !important; }
             .logo { font-size: 1.5rem; }
+            .hero-content h1 { font-size: 3rem; }
             .nav-links {
                 display: none; position: absolute; top: 100%; left: 0; width: 100%;
                 background: rgba(9, 18, 33, 0.98); flex-direction: column; padding: 20px 0;
@@ -302,7 +307,6 @@
             .nav-links.active { display: flex; }
             .dropdown-content { position: static; box-shadow: none; border: none; background: transparent; padding-left: 20px;}
             
-            .hero-content h1 { font-size: 3.5rem; }
             .catalog-container { flex-direction: column; }
             .catalog-sidebar { width: 100%; border-right: none; border-bottom: 1px solid var(--gold-border); }
         }
@@ -321,10 +325,10 @@
         <div id="google_translate_element"></div>
     </div>
 
-    <!-- 2. NAVIGATION (WITH LOGO & BIG LETTERS) -->
+    <!-- 2. NAVIGATION (WITH HUGE LOGO) -->
     <nav>
         <div class="logo glossy-heading">
-            <img src="logo.jpg" alt="MAK Logo" style="height: 50px; border-radius: 8px;">
+            <img src="logo.jpg" alt="MAK Logo">
             <span>MAK <span class="glossy-gold">GLOBAL TRADE</span></span>
         </div>
         <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
@@ -349,7 +353,7 @@
         </div>
     </nav>
 
-    <!-- 3. HERO BANNER WITH ANIMATED SLIDESHOW -->
+    <!-- 3. HERO BANNER WITH WELCOME TEXT -->
     <section class="hero">
         <div class="hero-slideshow">
             <div class="hero-slide"></div>
@@ -359,8 +363,8 @@
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <h1 class="glossy-heading">MAK <span class="glossy-gold">GLOBAL TRADE</span></h1>
-            <p>Your reliable partner for global export. We deliver top-quality farm products, fresh fruits, vegetables, and spices to the world safely and on time.</p>
+            <h1 class="glossy-heading">WELCOME TO<br>MAK <span class="glossy-gold">GLOBAL TRADE</span></h1>
+            <p>As a premier international export house based in India, we specialize in sourcing and delivering the finest agricultural commodities, fresh produce, and authentic spices to markets worldwide. Driven by an uncompromising commitment to quality, sustainable sourcing, and seamless global logistics, we ensure that every shipment meets the highest international standards.</p>
             <a href="#directors" class="btn-gold" style="font-size: 1.1rem; padding: 15px 35px;">About Us</a>
         </div>
     </section>
@@ -392,7 +396,6 @@
             </div>
 
             <div class="tam-card fade-hover" onclick="openCatalog('Tamarind', 'Tamarind Powder')">
-                <!-- UPDATED FILE NAME HERE -->
                 <img src="tamarindpowder.jpg" alt="Tamarind Powder">
                 <div class="tam-body">
                     <div class="hs-badge">HS Code: 110630</div>
@@ -414,9 +417,9 @@
         </div>
     </section>
 
-    <!-- 5. OUR SERVICES (Main Categories Grid) -->
+    <!-- 5. OUR SERVICES (WE EXPORT PRODUCTS) -->
     <section id="services" class="section">
-        <h2 class="section-title glossy-heading">Global <span class="glossy-gold">Portfolio</span></h2>
+        <h2 class="section-title glossy-heading">WE EXPORT <span class="glossy-gold">PRODUCTS</span></h2>
         
         <div class="services-grid">
             <div class="service-card fade-hover" onclick="openCatalog('Vegetables')">
@@ -428,7 +431,7 @@
                 </div>
             </div>
             <div class="service-card fade-hover" onclick="openCatalog('Fruits')">
-                <img src="mango.png" alt="Fruits">
+                <img src="fresh-fruits.jpeg" alt="Fruits">
                 <div class="service-body">
                     <h3>Fresh Fruits</h3>
                     <p style="color: var(--text-white);">Cold-chain preserved Mangoes, Bananas, Pomegranates, and Grapes.</p>
@@ -436,7 +439,6 @@
                 </div>
             </div>
             <div class="service-card fade-hover" onclick="openCatalog('Spices')">
-                <!-- UPDATED FILE NAME HERE -->
                 <img src="spices.jpg" alt="Spices">
                 <div class="service-body">
                     <h3>Indian Spices</h3>
@@ -498,17 +500,19 @@
         </div>
     </section>
 
-    <!-- INTERNATIONAL CURRENCIES WITH FLAGS -->
+    <!-- INTERNATIONAL CURRENCIES WITH SPECIFIC FLAGS -->
     <section class="currency-section">
         <h3 style="color: var(--gold-main); margin-bottom: 10px;">International Trade Currencies</h3>
         <p style="color: var(--text-white);">We facilitate global transactions using major international currencies for seamless B2B import operations.</p>
         <div class="currency-grid">
-            <div class="currency-item">🇺🇸 USD</div>
-            <div class="currency-item">🇬🇧 GBP</div>
-            <div class="currency-item">🇮🇳 INR</div>
-            <div class="currency-item">🇦🇪 AED</div>
-            <div class="currency-item">🇰🇼 KWD</div>
-            <div class="currency-item">🇸🇦 SAR</div>
+            <div class="currency-item">🇺🇸 USD (USA)</div>
+            <div class="currency-item">🇬🇧 GBP (UK)</div>
+            <div class="currency-item">🇨🇳 CNY (China)</div>
+            <div class="currency-item">🇮🇳 INR (India)</div>
+            <div class="currency-item">🇦🇪 AED (UAE)</div>
+            <div class="currency-item">🇸🇦 SAR (Saudi Arabia)</div>
+            <div class="currency-item">🇰🇼 KWD (Kuwait)</div>
+            <div class="currency-item">🇴🇲 OMR (Oman)</div>
         </div>
     </section>
 
@@ -737,7 +741,7 @@
                   quality: 'Our dried tamarind is strictly moisture-controlled to remain under 12%, completely preventing mold or fermentation. It is hygienically deseeded, pressed into dense blocks, and vacuum-sealed in export-grade packaging. Compliant with strict APEDA and international food safety standards.' 
                 },
                 { 
-                  name: 'Tamarind Powder', hs: '110630', imgMain: 'tamarindpowder.jpg', // UPDATED FILE PATH HERE
+                  name: 'Tamarind Powder', hs: '110630', imgMain: 'tamarindpowder.jpg',
                   desc: 'Fine, high-mesh industrial and culinary grade powder for instant flavoring and extractions.', 
                   history: 'Tamarind powder is a modern innovation in the spice trade, developed to meet the fast-paced needs of the modern global food industry. It transformed the traditional, labor-intensive process of soaking and extracting tamarind paste into a convenient, instantly soluble format.',
                   benefits: 'Provides instant, consistent flavor without the need for soaking or straining. It is an essential dry ingredient for instant spice mixes, ready-to-eat meals, sauces, and marinades. It is also highly sought after in the pharmaceutical and cosmetic industries for its natural acidic extracts.',
@@ -820,7 +824,7 @@
             ],
             'Spices': [
                 { 
-                  name: 'Red Chilli Powder', hs: '090422', imgMain: 'spices.jpg', // UPDATED FILE PATH HERE
+                  name: 'Red Chilli Powder', hs: '090422', imgMain: 'spices.jpg',
                   desc: 'Vibrant red color with high SHU heat ratings, milled from premium dried pods.', 
                   history: 'Spices are the foundation of India’s global trade history. Indian chilli powder is the global gold standard, historically driving the spice route economies. It remains an irreplaceable ingredient in Mexican, Asian, and Middle Eastern commercial food manufacturing.',
                   benefits: 'Delivers a standardized, potent heat and brilliant red color to bulk culinary applications. Rich in capsaicin, it acts as a natural preservative and metabolism booster.',
