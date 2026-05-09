@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAK GLOBAL TRADE | Premium Import & Export</title>
+    <!-- Premium Global Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -29,11 +31,11 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-            top: 0 !important; 
+            top: 0 !important; /* Overrides Google Translate gap */
         }
 
         /* --- STRICT HEADING RULES --- */
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             color: var(--gold-premium);
             font-weight: 800;
@@ -43,26 +45,44 @@
         
         .subtext {
             color: var(--light-green);
-            font-weight: 500;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 10px;
+        }
+
+        .hs-badge {
+            display: inline-block;
+            background: rgba(143, 188, 143, 0.1);
+            color: var(--light-green);
+            border: 1px solid var(--light-green);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         /* --- FLOATING ANIMATION FOR PRODUCT IMAGES --- */
         @keyframes float {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-12px); box-shadow: 0 15px 25px rgba(212, 175, 55, 0.1); }
+            50% { transform: translateY(-12px); box-shadow: 0 15px 25px rgba(212, 175, 55, 0.15); }
             100% { transform: translateY(0px); }
         }
         .float-img {
             animation: float 4s ease-in-out infinite;
             border-bottom: 2px solid var(--gold-premium);
             border-radius: 8px;
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            background: #000;
         }
 
-        /* --- TOP BAR --- */
+        /* --- TOP BAR (Language Selector) --- */
         .top-bar {
             background-color: #000; padding: 8px 5%; display: flex; justify-content: flex-end;
             align-items: center; border-bottom: 1px solid var(--border-subtle); z-index: 1001; position: relative;
@@ -85,12 +105,17 @@
         .nav-links { display: flex; gap: 25px; align-items: center; }
         .nav-links a { color: var(--text-main); text-decoration: none; font-weight: 500; transition: 0.3s; font-size: 0.95rem; }
         .nav-links a:hover { color: var(--light-green); }
+        .btn-outline {
+            border: 1px solid var(--gold-premium); color: var(--gold-premium); padding: 10px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; display: inline-block; font-size: 0.9rem;
+        }
+        .btn-outline:hover { background: var(--gold-premium); color: #000; }
 
         /* --- HERO BANNER & SLIDESHOW --- */
         .hero { height: 90vh; position: relative; display: flex; align-items: center; justify-content: flex-start; padding: 0 10%; overflow: hidden; }
         .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-color: #000; }
         .hero-slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; opacity: 0; animation: crossFade 20s infinite; }
-        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background: linear-gradient(90deg, rgba(9, 18, 33, 0.98) 0%, rgba(9, 18, 33, 0.8) 50%, rgba(9, 18, 33, 0.4) 100%); }
+        .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; background: linear-gradient(90deg, rgba(9, 18, 33, 0.98) 0%, rgba(9, 18, 33, 0.8) 50%, rgba(9, 18, 33, 0.4) 100%); border-bottom: 2px solid var(--gold-premium);}
+        
         .hero-slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=2000&q=80'); animation-delay: 0s; }
         .hero-slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=80'); animation-delay: 5s; }
         .hero-slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=80'); animation-delay: 10s; }
@@ -98,13 +123,8 @@
         @keyframes crossFade { 0% { opacity: 0; transform: scale(1.05); } 10% { opacity: 1; transform: scale(1); } 25% { opacity: 1; transform: scale(1); } 35% { opacity: 0; transform: scale(1.05); } 100% { opacity: 0; } }
 
         .hero-content { max-width: 800px; position: relative; z-index: 1; }
-        .hero-content h1 { font-size: 4.5rem; line-height: 1.1; }
-        .hero-content p { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 35px; border-left: 3px solid var(--gold-premium); padding-left: 15px;}
-        
-        .btn-outline {
-            border: 1px solid var(--gold-premium); color: var(--gold-premium); padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; display: inline-block;
-        }
-        .btn-outline:hover { background: var(--gold-premium); color: #000; }
+        .hero-content h1 { font-size: 5rem; line-height: 1.1; margin-bottom: 20px;}
+        .hero-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; border-left: 3px solid var(--gold-premium); padding-left: 20px; font-weight: 300;}
 
         /* --- SECTIONS --- */
         .section { padding: 90px 5%; }
@@ -112,47 +132,61 @@
 
         /* --- ABOUT US SECTION --- */
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-        .about-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; }
-
-        /* --- LEADERSHIP / DIRECTORS SECTION --- */
-        .leadership-card {
-            background: var(--card-bg); border: 1px solid var(--border-subtle); padding: 40px; border-radius: 8px; text-align: center; margin-top: 50px; max-width: 600px; margin-left: auto; margin-right: auto;
-        }
-        .leadership-card h3 { font-size: 2rem; margin-bottom: 5px; } /* Gold by default */
-        .leadership-card .title { color: var(--light-green); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+        .about-text p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 20px; line-height: 1.8;}
 
         /* --- PRODUCT DESCRIPTIONS & BENEFITS GRID --- */
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .product-card {
-            background: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-subtle); transition: 0.3s; display: flex; flex-direction: column;
+            background: var(--card-bg); padding: 35px 30px; border-radius: 8px; border: 1px solid var(--border-subtle); transition: 0.3s; display: flex; flex-direction: column;
         }
         .product-card:hover { border-color: var(--gold-premium); }
-        .product-card img { width: 100%; height: 220px; object-fit: cover; margin-bottom: 25px; background: #000;}
-        .product-card h3 { font-size: 1.5rem; margin-bottom: 5px; }
-        .product-card p.desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1;}
+        .product-card p.desc { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; line-height: 1.7;}
         .product-card ul { list-style: none; margin-bottom: 25px; }
-        .product-card ul li { color: var(--text-main); font-size: 0.9rem; margin-bottom: 8px; padding-left: 15px; position: relative; }
+        .product-card ul li { color: var(--text-main); font-size: 0.9rem; margin-bottom: 10px; padding-left: 15px; position: relative; }
         .product-card ul li::before { content: "•"; color: var(--gold-premium); position: absolute; left: 0; font-weight: bold;}
         .read-more { color: var(--light-green); font-weight: 600; text-transform: uppercase; font-size: 0.85rem; text-decoration: none; align-self: flex-start;}
-        .read-more:hover { text-decoration: underline; }
+        .read-more:hover { text-decoration: underline; color: var(--gold-premium);}
+
+        /* --- TRADE DATA & CERTIFICATIONS --- */
+        .data-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px;}
+        .data-card { background: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-subtle); text-align: center;}
+        .data-card i { font-size: 2.5rem; color: var(--gold-premium); margin-bottom: 20px; }
+        .cert-badge { display: inline-block; background: rgba(143, 188, 143, 0.1); color: var(--light-green); padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--light-green); margin-top: 15px;}
+
+        /* --- LEADERSHIP / DIRECTORS SECTION --- */
+        .leadership-card {
+            background: var(--card-bg); border: 1px solid var(--border-subtle); padding: 50px; border-radius: 8px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .leadership-card .title { color: var(--light-green); font-size: 1.1rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 25px; }
+
+        /* --- MULTI-BRANCH CONTACT SECTION --- */
+        .branch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .branch-card { background: var(--card-bg); border-top: 3px solid var(--gold-premium); padding: 40px 30px; border-radius: 8px; text-align: center; }
+        .branch-card .flag { font-size: 3.5rem; margin-bottom: 15px; display: block; }
+        .branch-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px; }
+        .branch-card a { color: var(--light-green); font-weight: 600; font-size: 1.1rem; text-decoration: none; }
 
         /* --- FORMS --- */
-        .form-container { max-width: 800px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 8px; border: 1px solid var(--border-subtle); }
-        .form-group { margin-bottom: 20px; }
-        /* ONLY Gold for Form Labels */
-        .form-group label { display: block; margin-bottom: 8px; color: var(--gold-premium); font-weight: 600; font-size: 0.95rem;}
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; background: var(--dark-ocean); border: 1px solid var(--border-subtle); border-radius: 4px; color: white; font-family: 'Poppins', sans-serif; }
+        .form-container { max-width: 800px; margin: 0 auto; background: var(--card-bg); padding: 50px; border-radius: 8px; border: 1px solid var(--border-subtle); }
+        .form-group { margin-bottom: 25px; }
+        /* STRICTLY Gold for Form Labels */
+        .form-group label { display: block; margin-bottom: 10px; color: var(--gold-premium); font-weight: 600; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px;}
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 15px; background: var(--dark-ocean); border: 1px solid var(--border-subtle); border-radius: 4px; color: white; font-family: 'Poppins', sans-serif; }
         .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--light-green); }
 
         /* --- FOOTER & CURRENCY --- */
-        .currency-section { background: var(--card-bg); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); padding: 40px 5%; text-align: center;}
+        .currency-section { background: #000; border-top: 1px solid var(--border-subtle); padding: 40px 5%; text-align: center;}
         .currency-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 20px; }
-        .currency-item { font-size: 1.2rem; font-weight: 600; color: var(--text-main); }
-        footer { background: #000; padding: 40px 5%; text-align: center; }
+        .currency-item { font-size: 1.1rem; font-weight: 600; color: var(--text-main); }
+        footer { background: var(--dark-ocean); padding: 50px 5%; text-align: center; border-top: 1px solid var(--border-subtle);}
+        .social-icons { font-size: 1.8rem; display: flex; justify-content: center; gap: 25px; margin-bottom: 25px; }
+        .social-icons a { color: var(--gold-premium); transition: 0.3s; }
+        .social-icons a:hover { color: var(--light-green); transform: scale(1.1); }
 
         @media (max-width: 900px) {
             .about-grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 3.5rem; }
+            .hero-content h1 { font-size: 3.2rem; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
@@ -169,10 +203,11 @@
         <div class="logo">MAK GLOBAL</div>
         <div class="nav-links">
             <a href="#about">About Us</a>
-            <a href="#products">Products & Benefits</a>
-            <a href="#leadership">Leadership</a>
-            <a href="#inquiry">Inquire</a>
+            <a href="#products">Export Portfolio</a>
+            <a href="#trade">Certifications</a>
+            <a href="#branches">Global Branches</a>
         </div>
+        <a href="#inquiry" class="btn-outline">Request Quote</a>
     </nav>
 
     <!-- 3. HERO BANNER -->
@@ -187,7 +222,7 @@
         <div class="hero-content">
             <h1>GLOBAL TRADE EXCELLENCE</h1>
             <p>Your Trusted Partner in Worldwide Export. Delivering premium agricultural commodities, spices, and fresh produce through a secure and reliable international logistics network.</p>
-            <a href="#about" class="btn-outline">Discover Our Standards</a>
+            <a href="#products" class="btn-outline" style="background: var(--gold-premium); color: #000;">Explore Specifications</a>
         </div>
     </section>
 
@@ -206,33 +241,33 @@
         </div>
     </section>
 
-    <!-- 5. PRODUCT DESCRIPTIONS & BENEFITS (Floating Grid) -->
+    <!-- 5. PRODUCT DESCRIPTIONS & BENEFITS GRID -->
     <section id="products" class="section" style="background-color: var(--card-bg);">
         <p class="subtext text-center">Export Portfolio</p>
         <h2 class="section-title">Product Descriptions & Benefits</h2>
         
         <div class="product-grid">
             
-            <!-- Tamarind Powder -->
+            <!-- 1. Tamarind Powder -->
             <div class="product-card">
                 <img src="tamarind-powde.jpg" alt="Tamarind Powder" class="float-img">
-                <p class="subtext">Industrial Extract</p>
+                <div class="hs-badge">HS Code: 110630</div>
                 <h3>Tamarind Powder</h3>
                 <p class="desc">High-mesh, free-flowing industrial grade powder processed under strict hygienic conditions for the food and pharma sectors.</p>
                 <ul>
                     <li>18-month extended shelf-life.</li>
                     <li>Moisture-proof bulk PP bagging.</li>
-                    <li>FSSAI & FDA compliance ready.</li>
+                    <li>FDA & FSSAI compliance ready.</li>
                 </ul>
                 <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
             </div>
 
-            <!-- Chilli -->
+            <!-- 2. Chilli -->
             <div class="product-card">
                 <img src="chilli.jpg" alt="Fresh Chilli" class="float-img">
-                <p class="subtext">Fresh Produce</p>
-                <h3>Green & Red Chillies</h3>
-                <p class="desc">Export-grade, hand-picked chillies ensuring maximum pungency and firmness for international retail markets.</p>
+                <div class="hs-badge">HS Code: 070960</div>
+                <h3>Fresh Chillies</h3>
+                <p class="desc">Export-grade, hand-picked green chillies ensuring maximum pungency and firmness for international retail markets.</p>
                 <ul>
                     <li>High SHU (Scoville Heat Units).</li>
                     <li>Cold-chain and reefer ready.</li>
@@ -241,10 +276,10 @@
                 <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
             </div>
 
-            <!-- Ginger -->
+            <!-- 3. Ginger -->
             <div class="product-card">
                 <img src="Ginger.jpg" alt="Fresh Ginger" class="float-img">
-                <p class="subtext">Fresh Produce</p>
+                <div class="hs-badge">HS Code: 091011</div>
                 <h3>Premium Ginger</h3>
                 <p class="desc">Washed, soil-free ginger roots selected for high essential oil content and minimal fibrous branching.</p>
                 <ul>
@@ -255,10 +290,10 @@
                 <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
             </div>
 
-            <!-- Garlic -->
+            <!-- 4. Garlic -->
             <div class="product-card">
                 <img src="garlic.jpeg" alt="White Garlic" class="float-img">
-                <p class="subtext">Fresh Produce</p>
+                <div class="hs-badge">HS Code: 070320</div>
                 <h3>White Garlic Bulbs</h3>
                 <p class="desc">High-aroma, fully mature garlic bulbs with intact paper skins, dried perfectly to prevent transit sprouting.</p>
                 <ul>
@@ -269,10 +304,10 @@
                 <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
             </div>
 
-            <!-- Mango -->
+            <!-- 5. Mango -->
             <div class="product-card">
                 <img src="mango.png" alt="Mangoes" class="float-img">
-                <p class="subtext">Premium Fruits</p>
+                <div class="hs-badge">HS Code: 080450</div>
                 <h3>Alphonso & Kesar Mangoes</h3>
                 <p class="desc">The undisputed King of Fruits. Sourced from certified orchards and prepared for elite global retail environments.</p>
                 <ul>
@@ -283,10 +318,10 @@
                 <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
             </div>
 
-            <!-- Pomegranate -->
+            <!-- 6. Pomegranate -->
             <div class="product-card">
                 <img src="Pomegranate.jpg" alt="Pomegranate" class="float-img">
-                <p class="subtext">Premium Fruits</p>
+                <div class="hs-badge">HS Code: 081090</div>
                 <h3>Ruby Pomegranates</h3>
                 <p class="desc">Thick-skinned, deep red aril pomegranates engineered by nature to withstand long marine freight journeys.</p>
                 <ul>
@@ -297,10 +332,10 @@
                 <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
             </div>
 
-            <!-- Grapes -->
+            <!-- 7. Grapes -->
             <div class="product-card">
                 <img src="grapes.jpg" alt="Grapes" class="float-img">
-                <p class="subtext">Premium Fruits</p>
+                <div class="hs-badge">HS Code: 080610</div>
                 <h3>Table Grapes</h3>
                 <p class="desc">Crisp, seedless table varieties grown in Maharashtra's prime vineyards, meticulously packed for European markets.</p>
                 <ul>
@@ -311,53 +346,7 @@
                 <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
             </div>
 
-            <!-- Chilli Powder -->
+            <!-- 8. Chilli Powder -->
             <div class="product-card">
                 <img src="chilipowder.jpg.webp" alt="Chilli Powder" class="float-img">
-                <p class="subtext">Ground Spices</p>
-                <h3>Red Chilli Powder</h3>
-                <p class="desc">Vibrant, high-heat ground spice processed without artificial colorants for global FMCG manufacturing.</p>
-                <ul>
-                    <li>Strict Aflatoxin testing.</li>
-                    <li>Multi-wall paper bag packaging.</li>
-                    <li>12-month ambient shelf life.</li>
-                </ul>
-                <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
-            </div>
-
-            <!-- Turmeric Powder -->
-            <div class="product-card">
-                <img src="turmeric_powder.jpg" alt="Turmeric Powder" class="float-img">
-                <p class="subtext">Ground Spices</p>
-                <h3>Turmeric Powder</h3>
-                <p class="desc">Deep yellow, high-curcumin content turmeric, milled precisely for the pharmaceutical and culinary sectors.</p>
-                <ul>
-                    <li>Pharmaceutical-grade purity.</li>
-                    <li>UV-protected export packaging.</li>
-                    <li>Spices Board certified.</li>
-                </ul>
-                <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
-            </div>
-
-            <!-- Cumin Seeds -->
-            <div class="product-card">
-                <img src="cumins.webp" alt="Cumin Seeds" class="float-img">
-                <p class="subtext">Whole Spices</p>
-                <h3>Cumin Seeds</h3>
-                <p class="desc">Highly aromatic, Sortex-cleaned whole cumin seeds ensuring absolute purity and zero foreign matter.</p>
-                <ul>
-                    <li>99.5% machine-sorted purity.</li>
-                    <li>Moisture-controlled jute bagging.</li>
-                    <li>Essential for Middle Eastern markets.</li>
-                </ul>
-                <a href="#inquiry" class="read-more">Request Quote &rarr;</a>
-            </div>
-
-            <!-- Rice -->
-            <div class="product-card">
-                <img src="rice.jpg" alt="Indian Rice" class="float-img">
-                <p class="subtext">Grains & Cereals</p>
-                <h3>Premium Indian Rice</h3>
-                <p class="desc">High-quality, meticulously milled Indian rice varieties catering to widespread global staple demands.</p>
-                <ul>
-                    <li>Aged for structural cooking 
+                <div class="hs-badge">HS Code: 
